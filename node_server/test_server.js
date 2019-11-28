@@ -19,6 +19,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello CEL-Research!');
+}); 
+
 app.route('/get_learner_data/:hashed_user_id/:course_branch_id/:course_week').get(function(req,res)
 {
 
