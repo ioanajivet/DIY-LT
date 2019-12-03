@@ -29,29 +29,27 @@ app.route('/get_learner_data/:hashed_user_id/:course_branch_id/:course_week').ge
 
     get_user_data(course_branch_id, hashed_user_id, function(err, learner_values) {
         if(err) {
-            console.log(err);   //TODO: update error message;
+            console.log(err);   //TODO: add error handling;
         }
         else {
             var standard = learner_values['standard'];
             console.log("standard: " + standard);
             get_standard_data(course_branch_id, course_week, standard, function (err, standard_values) {
                 if(err) {
-                    console.log(err); //TODO: update error message;
+                    console.log(err); //TODO: add error handling;
                 }
                 else {
                     get_widget_configuration(course_branch_id, course_week, hashed_user_id, function (err, widget_config) {
                         if(err) 
-                            console.log(err);
+                            console.log(err);   //TODO: add error handling;
                         else {
                             //TODO: compose reply: to send back to browser
                             var return_json = {};
 
                             return_json['hashed_user_id'] = learner_values.hashed_user_id;
-                            return_json['metric_names'] = learner_values.metric_names;
-                            return_json['metric_values'] = learner_values.metric_values;
-                            return_json['scaled_metric_values'] = learner_values.scaled_metric_values;
-                            return_json['standard_metric_values'] = standard_values.metric_values;
-                            return_json['scaled_standard_metric_values'] = standard_values.scaled_metric_values;
+                            return_json['standard'] = learner_values.standard;
+                            return_json['metrics'] = learner_values.metrics;
+                            return_json['standard_metrics'] = standard_values.metrics;
                             return_json['selected_metrics'] = widget_config.selected_metrics;
                             
                             res.json(return_json);
