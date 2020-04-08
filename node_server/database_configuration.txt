@@ -38,3 +38,13 @@ B. For research
     - can/must selected indicators for feedback => adjusts the metrics displayed on the widget
 
 
+=======================
+=======================
+=======================
+
+Configuring the widget - data sent to the server
+- course_branch_id
+- hashed_user_id
+- course_week
+- goal
+- selected metrics

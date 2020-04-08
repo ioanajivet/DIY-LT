@@ -7,21 +7,20 @@
     "email": "iji@ou.nl"
   },
   "version": "1.1",
-  "sandbox": "allow-scripts allow-same-origin allow-forms allow-modals no-cors",
+  "sandbox": "allow-scripts allow-same-origin allow-forms allow-modals cors",
   "configurationExamples": [{
     "configuration": {
-      "COURSE_HASHED_USER_ID": "%COURSE_HASHED_USER_ID%",
-      "COURSE_ID": "%COURSE_ID%",
+      "COURSE_HASHED_USER_ID": "%HASHED_USER_ID%",
+      "COURSE_BRANCHID": "%COURSE_BRANCH_ID%",
       "urlParams": {
-        "COURSE_HASHED_USER_ID": "%COURSE_HASHED_USER_ID%",
         "HASHED_USER_ID": "%HASHED_USER_ID%",
-        "COURSE_ID": "%COURSE_ID%"
+        "COURSE_BRANCH_ID": "%COURSE_BRANCH_ID%"
       }
     },
     "name": "LT Example",
     "description": "Simple config."
   }],
-  "macros": ["HASHED_USER_ID", "COURSE_ID"],
+  "macros": ["HASHED_USER_ID", "COURSE_BRANCH_ID"],
   "authorizations": {
     "storedValues": {
       "recordScore": {

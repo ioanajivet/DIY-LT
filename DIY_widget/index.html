@@ -8,6 +8,7 @@
 <head>
     <link rel="stylesheet" href="https://www.coursera.org/widget/coursera-connect.css">
     <link href='lt.css' rel='stylesheet' type='text/css'>
+    <link href='pretty_checkbox.css' rel='stylesheet' type='text/css'>
     <script src="https://www.coursera.org/widget/coursera-widget-connect-v0.js"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -17,90 +18,55 @@
 </head>
 <body>
 
-    <div id="container" style="max-width: 900px; height: 400px; margin: 0 auto">
+  <div id="container">
     
-      <div id="profile" class="left"></div>
-    
-      <button id="close" class="close" onclick="hideCustomisation()"> Hide </button>
-      <div id="customization" class="right">
-        <div id="goals">
+      <div id="introContainer">
+        <h2> Your personalised feedback box</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <p>Choose between three and six indicators that you would like to see. The feedback is updated daily. At the beginning of each week you can change the indicators if you wish.</p>
+      </div>
+
+      <div id="goalsContainer">
+        <div id="goalInput">
           <p>What is your goal for this MOOC?</p>
-    
-          <div>
-            <button tabindex="0" class="goalOption" data-choice="certify">Earn a certificate</button>
-            <button tabindex="0" class="goalOption" data-choice="complete">Complete the course</button>
-            <button tabindex="0" class="goalOption" data-choice="explore">Explore the course</button>
-            <button tabindex="0" class="goalOption" data-choice="unsure">Not sure yet</button>
-          </div>
+          <textarea id = "textLearnerGoal" rows = "4" cols = "80">  </textarea>
         </div>
-        <div id="indicators">
-          <p>What would you like to get feedback on?</p>
-          <table>
-            <tr>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_1"  />
-                <label for="checkbox_1" name="checkbox1_lbl" class="css-label lite-blue-check">Online presence</label>
-              </td>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_6" />
-                <label for="checkbox_6" name="checkbox6_lbl" class="css-label lite-blue-check">Active learning time</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_2" />
-                <label for="checkbox_2" name="checkbox2_lbl" class="css-label lite-blue-check">Connectedness</label>
-              </td>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_7" />
-                <label for="checkbox_7" name="checkbox7_lbl" class="css-label lite-blue-check">Practice time</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_3" />
-                <label for="checkbox_3" name="checkbox3_lbl" class="css-label lite-blue-check">Time on platform</label>
-              </td>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_8" />
-                <label for="checkbox_8" name="checkbox8_lbl" class="css-label lite-blue-check">Practice quiz attempted</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_4" />
-                <label for="checkbox_4" name="checkbox4_lbl" class="css-label lite-blue-check">Revisited material</label>
-              </td>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_9" />
-                <label for="checkbox_9" name="checkbox9_lbl" class="css-label lite-blue-check">Practice quiz efficiency</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_5" />
-                <label for="checkbox_5" name="checkbox5_lbl" class="css-label lite-blue-check">Timeliness of submissions</label>
-              </td>
-              <td>
-                <input type="checkbox" class="css-checkbox" id="checkbox_10" />
-                <label for="checkbox_10" name="checkbox10_lbl" class="css-label lite-blue-check">Graded quiz attempted</label>
-              </td>
-            </tr>
-          </table>
-    
-    
+        <div id="goalDisplay">
         </div>
-        <div id="others">
-          <p>Is there anything else that you would like to know?</p>
-          <textarea class="css-input" name="others" wrap="soft"> </textarea>
-          <input class="submitOther" type="submit">
+        <div id="goalButtonContainer">
+            <button class="goalButton" disabled> Save </button>
         </div>
       </div>
-    
-    </div>
-  <div id="course_id"></div>
-  <div id="course_user_hashed_id"></div>
+      
+      <div id="indicatorsContainer">
+        <p>What would you like to get feedback on?</p>
+        <div id="indicatorList"></div>
+        <div id="message">Please choose at least 3 indicators before saving your options!</div>
+        <button class="indicatorsButton" disabled> Save </button>
+      </div>
+
+      <div id="indicatorList">
+      </div>
+
+      <div id="widgetContainer">
+        <div id="widget"></div>
+        <div id="legend">
+          <!-- TODO: add the explanantions of the widget - what are successful learners and what are the metrics; 
+                  * add toggle show/hide button for this section-->
+            <div id="goalExplained"></div>
+            <div id="indicatorsExplained"></div>
+            <button class="updateIndicatorsButton"> Change indicators </button>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+     
   </div>
+  
+  <div id="learner_goal">Learner goal will appear here.</div>
+  <div id="check-up">Selected metrics will appear here.</div>
+  <div id="widget_configured">Selected metrics will appear here.</div>
+
 </body>
 <footer>
 </footer>
