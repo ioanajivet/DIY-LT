@@ -1,1 +1,2 @@
 # DIY-LT
+Dependencies: winston
