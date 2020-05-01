@@ -1,180 +1,471 @@
 body{
   margin: 0;
   padding: 0;
+  background-color: #f5f5f7;
   font-family: OpenSans, sans-serif;
+  font-size: 14px;
 }
+
 
 #container {
   max-width: 900px; 
   height: 100%;
   margin: 0 auto;
-  text-align: center;
+
   padding: 0.5% 0.5% 0.5% 0.5%;
-  background-color: #d5d6da;
-}
-
-#introContainer {
-  font-size: 14px;
-}
-
-#introContainer h2 {
-  font-size: 24px;
-}
-
-
-#goalInput {
-  display: none; 
-}
-
-#goalDisplay {
-  display: none; 
-}
-
-#goalButtonContainer {
-  display: none; 
-}
-
-#indicatorsContainer {
-  display: none;
-}
-
-#widgetContainer {
-  display: none;
-  padding: 0.5% 0.5% 0.5% 0.5%;
-}
-
-#widget {
-  width: 48%;
-  float: left;
-  padding: 2% 1% 2% 1%;
-  background-color: #6fa8dc;
-}
-
-#legend {
-  width: 49%;
-  height: 90%;
-  float: right;
-  background-color: #e2883e;
-}
-
-/* Goal input textarea */
-#textLearnerGoal {
+  background-color: #ffffff;
   font-family: OpenSans, sans-serif;
   font-size: 14px;
 }
 
-/* Goal button selection 
-TODO:optimise the indicators and goal button selection - same style
-*/
-
-.goalButton {
-	background-color:#b1b7c2;
-	border-radius:28px;
-	border:1px solid #81848b;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-  font-size:17px;
-  margin: 1% 0 2% 0;
-	padding:16px 75px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #555658;
-}
-
-.selectedGoalButton {
-  background-color:#7892c2;
-	position:relative;
-	top:1px;
+#container h3 {
+  text-align: left;
 }
 
 /* ===================== */
+/* Consent container */
+/* ===================== */
 
+#consentContainer {
+  display: none;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 5px;
+  text-align: justify;
+  font-size: 12px;
+}
+
+#consentContainer h3 {
+  text-align: center;
+}
+
+#followUpForm{
+  width: 100%;
+  margin: auto;
+  padding: 8px 10px;
+}
+
+#emailBox {
+  display: none;
+}
+
+input[type=email], select {
+  width: 60%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#consentButtonsContainer {
+  margin: auto;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+#goodByeMessage {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 100px 0px;
+  display: none;
+}
+
+a {
+  color: #6fa7dc;
+}
+/* ===================== */
+/* Introduction container */
+/* ===================== */
+
+#introContainer {
+  display: none;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 5px;
+}
+
+#introContainer h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+#introContainer p {
+  text-align: left;
+}
+
+#introDisplay {
+  display: none;
+}
+
+/* ===================== */
+/* Goal setting container */
+/* ===================== */
+
+#goalsContainer {
+  display: none;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+#goalInput{
+  font-size: 14px;
+  text-align: center;
+}
+
+#goalPrompt{
+  display: none;
+  font-size: 14px;
+  text-align: left;
+}
+
+#goalPrompt h3 {
+  text-align: left;
+}
+
+textarea {
+  width: 70%;
+  padding: 10px 15px;
+  margin: auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#goalDisplay {
+  display: none;
+}
+
+#quotedGoal {
+  width: 90%;
+  margin: auto;
+  background-image: url('images/quote.png');
+  background-repeat: no-repeat;
+  background-position: left top; 
+  min-height: 70px;
+}
+
+#goalDisplay h3 {
+  text-align: left;
+}
+
+.goalQuote {
+  padding: 10px 0 0 35px;
+  text-align: center;
+}
+
+#goalButtonContainer {
+  text-align: center;
+  display: none;
+}
+
+#updateGoalButtonContainer {
+  text-align: center;
+  display: none;
+}
+
+/* ===================== */
 /* Indicator selection */
+/* ===================== */
+
+#indicatorsContainer {
+  display: none;
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+#indicatorInstruction{
+  padding: 0 0 3% 0;
+  display: inline-block;
+  text-align: left;
+}
+
 #indicatorList {
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 .indicator {
   width: 47%;
   padding: 1% 1% 1% 1%;
   display: inline-block;
-  text-align: center;
+  text-align: left;
   vertical-align: top;
 }
 
+#indicatorsMessageBox {
+  display: none;
+}
+
+#indicatorButtonContainer {
+  text-align: center;
+}
+
+#updateIndicatorsButtonContainer {
+  display: none;
+  text-align: center;
+}
+
+#indicatorsMessageBox{
+  display: none;
+}
+
+.messageBox {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  background-image: url('images/warning_sign_blue.png');
+  /* background-image: url('images/warning_sign_blue.png'); */
+  background-repeat: no-repeat;
+  background-position: left center; 
+  min-height: 60px;
+  vertical-align: middle;
+}
+
+.message {
+  margin: auto;
+  text-align: center; 
+}
+
+/* ===================== */
+/* Widget container */
+/* ===================== */
+
+/* Widget */
+#widgetSection {
+  display: none;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#widgetContainer {
+  display: flex;
+  align-items: center;
+  padding: 0.5% 0.5%;
+}
+
+#widgetIntro {
+  text-align: left;
+}
+
+#widget {
+  width: 64%;
+  float: left;
+  margin: auto;
+}
+
+/* Buttons */
+
+#buttonContainer {
+  width: 25%;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.widgetButton {
+  background-color: #6fa7dc;
+  border-radius: 15px;
+  border:1px solid #81848b;
+  color: #ffffff;
+  cursor:pointer;
+  font-size: 14px;
+  margin: 10px 10px;
+  padding: 8px 10px;
+  text-shadow:0px 1px 0px #555658;
+  text-align: center;
+}
+
+button:disabled,
+button[disabled]{
+  background-color:#b1b7c2;
+}
+
+.widgetButton.disabledButton {
+  background-color:#b1b7c2;
+}
+
+/* ======================= */
+/* Explanantions container */
+/* ======================= */
+
+#explanationsContainer {
+  width: 80%;
+  margin: auto;
+}
+
+/* Legend = indicator explanations */
+
+#legend {
+  width: 49%;
+  display: none;
+  float: left;
+  margin: auto;
+}
+
+.explainedIndicator {
+  padding: 1% 0;
+  text-align: left;
+}
+
+.indicatorTitle {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
 .indicatorExplanation{
-  width: 90%;
+  width: 95%;
+  text-align: left;
   overflow-wrap: break-word;
-  font-size: small;
+  font-size: 13px;
   font-weight: 200;
-  padding: 1% 1% 1% 1%;
+  padding: 1% 3% 1% 2%;
   display: inline-block;
   position: relative;
 }
 
-.indicatorsButton {
-  background-color:#b1b7c2;
-	border-radius:28px;
-	border:1px solid #81848b;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-  font-size:17px;
-  margin: 3% 0 2% 0;
-	padding:16px 75px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #555658;
+/* FAQ */
+
+#FAQContainer {
+  width: 49%;
+  display: none;
+  float: right;
+  margin: auto;
+  text-align: left;
+
 }
 
-.selectedIndicatorsButton {
-  background-color:#7892c2;
-	position:relative;
-	top:1px;
+#FAQContainer p {
+  padding-left: 25px;
+  font-size: 13px;
 }
+.question {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px 0px;
+ }
 
-#message {
-  margin: 3% 0 0 0;
-}
+.question:hover {
+  color: #6fa7dc;
+ }
 
-/* ============================== */
-/* Update widget */
+.answer {
+  display: none;
+  font-size: 13px;
+  text-align: left;
+  overflow-wrap: break-word;
+  font-weight: 200;
+  position: relative;
+ }
 
+/* ======================= */
+/*  SRL survey container   */
+/* ======================= */
 
-.updateIndicatorsButton {
-	background-color:#7892c2;
-	border-radius:28px;
-	border:1px solid #81848b;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-  font-size:17px;
-  margin: 1% 0 2% 0;
-	padding:16px 75px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #555658;
-	position:relative;
-	top:1px;
-}
-
-/* ===================== */
-/* ===================== */
-
-/* Customisation hide button */
-
-.close {
-  position: absolute;
-  width: 5%;
-  top: 5px;
-  right: 5px;
-  background: #ffffff;
-  border-radius: 4px;
-  border: 0px;
-  padding: 8px 10px;
-  color: #6fa8dc;
-  font: normal 700 24px/1;
+#surveySection {
+  width: 80%;
+  margin: auto;
+  display: none;  
   text-align: center;
-  text-shadow: none;
+  padding-top: 20px;
+}
+
+#surveySection h3 {
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+#surveyIntro {
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+#surveyContainer {
+  display: none;
+}
+
+#surveyContainer p {
+  text-align: left;
+}
+
+#SRLMessageBox {
+  display: none;
+}
+
+.tc-item {
+  width: 54%;
+  text-align: left;
+  vertical-align: top;
+  padding-right: 5px;
+  padding-left: 8px;
+
+}
+
+.tc-scale {
+  width: 44%;
+  vertical-align: top;
+  padding-left: 15px;
+}
+
+
+.radio-group {
+  text-align: center;
+}
+
+.radio-inline {
+  width: 14%;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px 0px;
+  border-left: 0px none;
+  border-right: 0px none;
+  border-color: ;
+}
+
+#srl-scale-min {
+  float: left;
+  width: 25%;
+}
+
+#srl-scale-max {
+  float: right;
+  width: 23%;
+}
+
+#surveyButtonContainer {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.widgetButton.surveyButton {
+  min-width: 15%;
+  margin: 20px 15px;
+}
+
+#SRLThanksMessage {
+  text-align: left;
+  margin: auto;
+  display: none;
 }

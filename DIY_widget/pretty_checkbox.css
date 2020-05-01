@@ -31,7 +31,8 @@
     font-weight:400;
     margin:0;
     text-indent:1.5em;
-    min-width:calc(1em + 2px)
+    min-width:calc(1em + 2px);
+    
 }
 .pretty .state label:after,.pretty .state label:before{
     content:'';
