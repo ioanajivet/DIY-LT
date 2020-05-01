@@ -34,7 +34,7 @@ app.get('/learner_data/:hashed_user_id/:course_branch_id', (req,res) => {
     logger.info({
         hashed_user_id: hashed_user_id,
         course_branch_id: course_branch_id,
-        message: 'request for load widget'
+        message: 'load widget'
     });
 
     log_interaction(course_branch_id, hashed_user_id, "load widget", function(err, entry) {
@@ -93,7 +93,7 @@ app.post('/learner_data/consent/:hashed_user_id/:course_branch_id', function(req
     logger.info({
         hashed_user_id: hashed_user_id,
         course_branch_id: course_branch_id,
-        message: 'request for consent update: ' + consent
+        message: 'consent update: ' + consent
     });
 
     log_interaction(course_branch_id, hashed_user_id, "consent: " + consent, function(err, entry) {
@@ -133,7 +133,7 @@ app.post('/learner_data/goal/:hashed_user_id/:course_branch_id', function(req, r
     logger.info({
         hashed_user_id: hashed_user_id,
         course_branch_id: course_branch_id,
-        message: 'request for goal update: ' + consent
+        message: 'goal update: ' + learner_goal
     });
 
     log_interaction(course_branch_id, hashed_user_id, "set goal: " + learner_goal, function(err, entry) {

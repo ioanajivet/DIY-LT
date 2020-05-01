@@ -196,11 +196,11 @@ $(function () {
 	//********************************************************
 
 
-	//var url = 'https://cel-research.ewi.tudelft.nl/learner_data/';
-	var url = 'http://localhost:8000/learner_data/';
+	var url = 'https://cel-research.ewi.tudelft.nl/learner_data/';
+	//var url = 'http://localhost:8080/learner_data/';
 
 	//TODO: read the parameters of the course
-	var hashed_user_id = 'user_45677788990022331';
+	var hashed_user_id = 'user_123';
 	var course_branch_id = 'branch_A';
 
 	var consent;					//status of the consent: null, true, false;
@@ -845,6 +845,8 @@ function load_widget(learner_metrics, selected_metrics) {
 
 async function get_learner_data(url, hashed_user_id, course_branch_id) {
 	url += hashed_user_id + "/" + course_branch_id;
+
+	console.log(url);
 
 	return fetch(url, {
 		method: 'GET',
