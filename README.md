@@ -7,6 +7,10 @@ by Jivet, Wong, Scheffel, Valle Torre, Specht and Drachsler (LAK21).
 
 The values of the indicators are extracted from Coursera and updated on a daily basis by our [Processing Module](https://github.com/mvallet91/coursera-tracker-processing).
 
+<p align="center">
+    <img src="https://github.com/ioanajivet/DIY-LT/blob/master/ArchitectureUpdate.png" width="900">
+</p>
+
 ## Node Server
 The backend in `node_server` consists of the `Node.js` server, which uses [`winston`](https://github.com/winstonjs/winston) for logging, managed by [`pm2`](https://github.com/Unitech/pm2) in a Linux machine; a [`MongoDB`](https://www.mongodb.com/) database and [`nginx`](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) to handle all app requests.  
 - Every time a student accesses the widget via Coursera, it will request the learner's indicators using their `hashed_id`. 
